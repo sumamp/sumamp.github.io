@@ -132,8 +132,15 @@
             animation: fadeInUp 1s ease 0.2s both;
         }
 
-        .hero-content p {
+        .hero-subtitle {
             font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease 0.4s both;
@@ -151,6 +158,7 @@
             animation: fadeInUp 1s ease 0.6s both;
             position: relative;
             overflow: hidden;
+            margin: 0 0.5rem;
         }
 
         .cta-button:hover {
@@ -171,6 +179,17 @@
 
         .cta-button:hover::before {
             left: 100%;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .cta-secondary:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
         }
 
         /* Sections */
@@ -205,6 +224,10 @@
             line-height: 1.8;
         }
 
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -225,6 +248,69 @@
             transform: translateY(-5px);
             background: rgba(0, 212, 255, 0.1);
             border-color: var(--accent);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .experience-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 212, 255, 0.05);
+            border-color: var(--accent);
+        }
+
+        .experience-item h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .duration {
+            color: var(--accent-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-item li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .experience-item li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         /* Projects Section */
@@ -326,6 +412,7 @@
             justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .contact-link {
@@ -340,6 +427,8 @@
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
             border-radius: 15px;
+            min-width: 150px;
+            justify-content: center;
         }
 
         .contact-link:hover {
@@ -420,6 +509,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -428,9 +518,13 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Software Developer</h1>
-            <p>Crafting digital experiences with passion and precision</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <h1>Full Stack Developer</h1>
+            <div class="hero-subtitle">MERN Stack & LAMP Stack Specialist</div>
+            <p>3+ years of experience crafting scalable web applications</p>
+            <div>
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#contact" class="cta-button cta-secondary">Get In Touch</a>
+            </div>
         </div>
     </section>
 
@@ -438,18 +532,71 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>I'm a passionate developer who loves creating innovative digital solutions. With a keen eye for design and a deep understanding of modern technologies, I bring ideas to life through clean, efficient code.</p>
-                <p>My journey in development has led me to work with various technologies and frameworks, always staying curious and eager to learn new approaches to solve complex problems.</p>
+                <p>I'm an experienced Full Stack Developer with over 3 years of hands-on experience in designing, developing, testing, and maintaining web applications using MERN Stack and LAMP Stack technologies.</p>
+                <p>Currently working at Wings Brand Activations, I specialize in building scalable, secure applications with clean architecture and responsive UI components. I'm proficient in REST API development, Agile methodologies, and the full software development lifecycle (SDLC).</p>
+                <p>I'm currently upskilling in Next.js and have a strong foundation in Data Structures, Algorithms, and Object-Oriented Programming.</p>
             </div>
             <div class="skills-grid">
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">React</div>
-                <div class="skill-item">Node.js</div>
-                <div class="skill-item">PHP</div>
-                <div class="skill-item">CSS</div>
                 <div class="skill-item">MongoDB</div>
-                <div class="skill-item">Git</div>
+                <div class="skill-item">Express.js</div>
+                <div class="skill-item">React.js</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Vue.js</div>
+                <div class="skill-item">Angular</div>
+                <div class="skill-item">Laravel</div>
+                <div class="skill-item">PHP</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">HTML & CSS</div>
+                <div class="skill-item">Bootstrap</div>
+                <div class="skill-item">REST APIs</div>
+                <div class="skill-item">MySQL</div>
                 <div class="skill-item">Docker</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Next.js</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <h3>Full Stack Developer</h3>
+                <h4>Wings Brand Activations (I) Pvt Ltd</h4>
+                <div class="duration">May 2025 – Present</div>
+                <ul>
+                    <li>Developing scalable web applications using Laravel, focusing on backend services and database optimization</li>
+                    <li>Collaborating with UI teams to enhance user interface with Blade templating engine and responsive layouts</li>
+                    <li>Performing regular bug fixes, code refactoring, and performance tuning in production</li>
+                    <li>Actively learning Next.js for future migration to server-side rendered applications</li>
+                    <li>Participating in Agile sprints, version control via Git, and peer code reviews</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer</h3>
+                <h4>Amareatech Solutions Pvt Ltd</h4>
+                <div class="duration">March 2025 – May 2025</div>
+                <ul>
+                    <li>Designed and built full-stack applications from scratch using PHP frameworks (Laravel, CakePHP) and Node.js</li>
+                    <li>Developed RESTful APIs using Laravel for seamless frontend-backend integration and high-volume data processing</li>
+                    <li>Created dynamic web interfaces using Blade templating and applied OOP principles in system design</li>
+                    <li>Built real-time notification systems and ERP tools to enhance user experience and operational efficiency</li>
+                    <li>Conducted manual testing and deployed updates using SSH on remote Linux servers</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Web Developer</h3>
+                <h4>Qineos Software Pvt Ltd</h4>
+                <div class="duration">March 2022 – November 2024</div>
+                <ul>
+                    <li>Designed and implemented an HRMS solution using MongoDB, Express.js, React.js, and Node.js</li>
+                    <li>Created secure CRUD operations for employee data management, attendance, and payroll</li>
+                    <li>Developed interactive UI components with React.js, with exposure to Vue.js</li>
+                    <li>Built backend REST APIs to support dynamic front-end features and efficient data handling</li>
+                    <li>Worked in an Agile environment, managing version control with Git and collaborating with cross-functional teams</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -458,13 +605,13 @@
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3 class="project-title">E-Commerce Platform</h3>
-                <p class="project-description">A modern, responsive e-commerce solution built with React and Node.js, featuring real-time inventory management and secure payment processing.</p>
+                <h3 class="project-title">HRMS Solution</h3>
+                <p class="project-description">Comprehensive Human Resource Management System built with MERN Stack, featuring employee data management, attendance tracking, and payroll processing with secure CRUD operations.</p>
                 <div class="project-tech">
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Node.js</span>
                     <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">Stripe</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
                 </div>
                 <div class="project-links">
                     <a href="#" class="project-link">View Demo →</a>
@@ -473,13 +620,13 @@
             </div>
 
             <div class="project-card">
-                <h3 class="project-title">Task Management App</h3>
-                <p class="project-description">An intuitive project management tool with drag-and-drop functionality, real-time collaboration, and advanced analytics dashboard.</p>
+                <h3 class="project-title">Laravel Web Application</h3>
+                <p class="project-description">Scalable web application built with Laravel framework, featuring backend services optimization, Blade templating engine, and responsive UI components with MySQL database integration.</p>
                 <div class="project-tech">
-                    <span class="tech-tag">Vue.js</span>
-                    <span class="tech-tag">Express</span>
-                    <span class="tech-tag">Socket.io</span>
-                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Laravel</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Bootstrap</span>
                 </div>
                 <div class="project-links">
                     <a href="#" class="project-link">View Demo →</a>
@@ -488,13 +635,13 @@
             </div>
 
             <div class="project-card">
-                <h3 class="project-title">AI Image Generator</h3>
-                <p class="project-description">A machine learning powered application that generates unique artwork based on text prompts, featuring a sleek UI and fast processing.</p>
+                <h3 class="project-title">ERP Tools & Notification System</h3>
+                <p class="project-description">Real-time Enterprise Resource Planning tools with notification systems built using PHP frameworks and Node.js, enhancing operational efficiency and user experience.</p>
                 <div class="project-tech">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Real-time</span>
                 </div>
                 <div class="project-links">
                     <a href="#" class="project-link">View Demo →</a>
@@ -507,20 +654,20 @@
     <section id="contact" class="fade-in">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-content">
-            <p>I'm always open to discussing new opportunities and interesting projects. Let's create something amazing together!</p>
+            <p>Ready to collaborate on your next web development project? I'm passionate about building scalable, secure applications and always excited to work on challenging full-stack solutions.</p>
             <div class="contact-links">
                 <a href="mailto:sumamp9@gmail.com" class="contact-link">
-                    <span>📧</span> Email
+                    <span>📧</span> sumamp9@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/suma-m-p/" class="contact-link">
+                <a href="https://www.linkedin.com/in/suma-m-p" class="contact-link">
                     <span>💼</span> LinkedIn
                 </a>
-                <a href="https://github.com/sumamp" class="contact-link">
-                    <span>🐙</span> GitHub
+                <a href="tel:+918951727725" class="contact-link">
+                    <span>📱</span> +91 8951727725
                 </a>
-<!--                 <a href="https://twitter.com/yourhandle" class="contact-link">
-                    <span>🐦</span> Twitter
-                </a> -->
+                <a href="#" class="contact-link">
+                    <span>📍</span> Bengaluru
+                </a>
             </div>
         </div>
     </section>
@@ -592,7 +739,7 @@
         });
 
         // Project card hover effects
-        document.querySelectorAll('.project-card').forEach(card => {
+        document.querySelectorAll('.project-card, .experience-item').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.boxShadow = '0 20px 40px rgba(0, 212, 255, 0.2)';
             });
